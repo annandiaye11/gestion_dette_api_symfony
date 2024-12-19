@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BoutiqController!{% endblock %}
+
+{% block body %}
+<p>Details de la boutique</p>
+{{ boutiq.id }}
+{% if boutiq.clients is not null%}
+    <p>Nombre de clients: {{ boutiq.clients | length }}</p>
+    {% for cl in boutiq.clients  %}
+        <p>{{ cl.surname }}</p>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}
